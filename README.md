@@ -14,6 +14,13 @@ write permission to `/usr/local`, you will need to run `sudo
 ./install.sh` instead. You can install to a different prefix by
 setting the `PREFIX` environment variable.
 
+If you only intend to use ruby-build via rbenv then you can
+install it locally as a plugin:
+
+    $ mkdir -p ~/.rbenv/plugins
+    $ cd ~/.rbenv/plugins
+    $ git clone git://github.com/sstephenson/ruby-build.git
+
 ### Installing Ruby
 
 To install a Ruby version, run the `ruby-build` command with the path
@@ -36,6 +43,28 @@ ruby-build provides an `rbenv-install` command that shortens this to:
     $ rbenv install 1.9.2-p290
 
 ### Version History
+
+#### 20120216
+
+* Added definitions for REE 1.8.7-2011.12 and 1.8.7-2012.01.
+* Added definitions for JRuby 1.6.5.1 and 1.6.6.
+* Added definitions for Ruby 1.8.7-p358 and 1.9.3-p125.
+* Updated the readme with instructions for installing ruby-build as an
+  rbenv plugin.
+
+#### 20111230
+
+* Added a definition for MagLev 1.0.0.
+* Added support for overriding `make` options with the
+  `$MAKEOPTS`/`$MAKE_OPTS` environment variable.
+* Removed RubyGems installations from JRuby definitions in favor of
+  the bundled RubyGems versions.
+* Added a `before_install_package` hook.
+* Added definitions for REE 1.8.7-2009.09 and 1.8.7-2010.01.
+* Added definitions for Ruby 1.8.6-p383, 1.8.7-p302 and 1.8.7-p357.
+* Updated the JRuby 1.7.0-dev snapshot URL.
+* Changed the GCC detector to look for `gcc-*` anywhere in the
+  `$PATH`, not just `/usr/bin`.
 
 #### 20111030
 
